@@ -1,0 +1,27 @@
+/* This is a css comment */
+body {
+    background-color: aquamarine;
+}
+
+/* tag selector */
+p {
+    font-size: 24px;
+    color: white;
+}
+
+/* class selector */
+.main-paragraph {
+    color: green;
+}
+
+/* id selector */
+#mainmain {
+    color: red;
+}
+
+/* Selector specificity hierarchy  */
+/* 1. inline style  */
+/* 2. id  */
+/* 3. class  */
+/* 4. tag  */
+/* Selector specificity hierarchy  */
