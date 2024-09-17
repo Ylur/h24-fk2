@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Positioning Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Positioning Demonstration</h1>
+
+        <!-- Static Position (default) -->
+        <div class="box static">
+            <p>Static Position (Default)</p>
+        </div>
+
+        <!-- Relative Position -->
+        <div class="box relative">
+            <p>Relative Position (10px down, 10px right)</p>
+        </div>
+
+        <!-- Absolute Position -->
+        <div class="box absolute">
+            <p>Absolute Position (bottom-right corner)</p>
+        </div>
+
+        <!-- Fixed Position -->
+        <div class="box fixed">
+            <p>Fixed Position (stays in top-right corner)</p>
+        </div>
+
+        <!-- Sticky Position -->
+        <div class="box sticky">
+            <p>Sticky Position (sticks to top when scrolling)</p>
+        </div>
+
+        <div class="content">
+            <p>Scroll down to see how the sticky box behaves.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar, justo nec congue tincidunt, nisl lorem tincidunt felis, eget congue ex erat nec sapien. Phasellus ut nunc sed dui vestibulum varius at vel sem.</p>
+            <p>Vivamus quis nisi sit amet nulla euismod auctor. Phasellus pharetra dictum felis, a facilisis elit aliquet vel.</p>
+            <!-- Add more content to demonstrate scrolling -->
+            <p>Scroll more to see the sticky behavior and how other elements stay in their place. Sticky elements only stay sticky when they reach the top of the viewport.</p>
+        </div>
+    </div>
+</body>
+</html>

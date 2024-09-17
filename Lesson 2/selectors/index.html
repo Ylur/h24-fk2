@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector Hierarchy & Cascade Effect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Selector Hierarchy & Cascade Effect</h1>
+        
+        <!-- Paragraph with a class -->
+        <p class="paragraph">This paragraph is styled using a class selector.</p>
+
+        <!-- Paragraph with an ID -->
+        <p id="unique-paragraph">This paragraph is styled using an ID selector.</p>
+
+        <!-- Paragraph with both class and ID -->
+        <p id="important" class="paragraph special">This paragraph has both a class and an ID. Which one wins?</p>
+
+        <!-- Inline style overrides -->
+        <p class="paragraph" style="color: red;">This paragraph has inline styles that override everything!</p>
+
+        <!-- Universal and element selector demo -->
+        <p class="paragraph global">This paragraph is affected by the universal selector.</p>
+    </div>
+</body>
+</html>

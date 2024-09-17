@@ -1,0 +1,46 @@
+/* * {
+    margin: 0;
+    padding: 0;
+} */
+
+
+.block {
+    height: 200px;
+    width: 200px;
+    /* position: static; */
+}
+
+.block-1 {
+    background-color: blue;
+    /* float: left; */
+    /* position: fixed */
+    /* position: sticky; */
+    /* position: sticky; */
+    /* top: 0px; */
+    /* top: 0px; */
+    /* right: 50px; */
+    /* left: 0px; */
+    /* right: 0px; */
+    /* bottom: 0px; */
+    /* height: 500px; */
+    /* position: absolute; */
+
+}
+
+.block-2 {
+    display: none;
+    background-color: red;
+    /* position: absolute; */
+}
+
+.container {
+    border: 2px solid black;
+    background-color: yellow;
+    position: relative;
+}
+
+/* position: relative */
+/* position: absolute */
+/* position: fixed */
+/* position: sticky */
+/* position: static */

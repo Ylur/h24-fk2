@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Units: px, em, rem</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Units: px, em, and rem Demonstration</h1>
+
+        <!-- Section using px -->
+        <section class="section-px">
+            <h2>Using px (Pixels)</h2>
+            <p>This section uses pixel-based values for font size and padding.</p>
+            <div class="box">
+                <p>Font size: 16px</p>
+                <p>Padding: 20px</p>
+            </div>
+        </section>
+
+        <!-- Section using em -->
+        <section class="section-em">
+            <h2>Using em</h2>
+            <p>This section uses em-based values for font size and padding. The base font size here is 16px.</p>
+            <div class="box">
+                <p>Font size: 1.5em (24px based on 16px parent size)</p>
+                <p>Padding: 2em (32px based on 16px parent size)</p>
+            </div>
+        </section>
+
+        <!-- Section using rem -->
+        <section class="section-rem">
+            <h2>Using rem</h2>
+            <p>This section uses rem-based values for font size and padding. Rem is relative to the root font size (which is 16px).</p>
+            <div class="box">
+                <p>Font size: 2rem (32px)</p>
+                <p>Padding: 1.5rem (24px)</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

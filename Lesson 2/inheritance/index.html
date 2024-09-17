@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Inheritance Demonstration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Inheritance Demonstration</h1>
+
+        <!-- Parent element with inherited properties -->
+        <div class="parent">
+            <h2>Parent Element</h2>
+            <p>This is a parent element. The font color and font size should be inherited by its children.</p>
+            
+            <!-- Child element that inherits properties -->
+            <div class="child">
+                <h3>Child Element</h3>
+                <p>This child element inherits the font color and size from the parent.</p>
+                
+                <!-- Another child with overridden properties -->
+                <div class="grandchild">
+                    <h4>Grandchild Element</h4>
+                    <p>This grandchild element has some overridden styles and doesn't fully inherit from the parent.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Non-inherited properties example -->
+        <div class="non-inherited">
+            <h2>Non-Inherited Properties</h2>
+            <p>This demonstrates that padding and margin are not inherited by default.</p>
+        </div>
+    </div>
+</body>
+</html>

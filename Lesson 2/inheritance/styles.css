@@ -1,0 +1,58 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Container for the demo */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Parent element with inherited properties */
+.parent {
+    color: #4CAF50; /* Font color will be inherited by child elements */
+    font-size: 18px; /* Font size will be inherited by child elements */
+    padding: 20px;
+    background-color: #e0f7fa;
+}
+
+/* Child element */
+.child {
+    padding: 10px;
+    background-color: #a7ffeb; /* Non-inherited background color */
+    margin: 10px 0;
+}
+
+/* Grandchild element with overridden styles */
+.grandchild {
+    color: #FF5722; /* Overridden font color */
+    font-size: 14px; /* Overridden font size */
+    background-color: #ffe0b2;
+    padding: 10px;
+}
+
+/* Non-inherited properties example */
+.non-inherited {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #ffcdd2;
+    font-size: 20px;
+    /* Padding and margin will not be inherited by the <p> tag */
+}
+
+/* Demonstrating the use of 'inherit', 'initial', and 'unset' */
+.non-inherited p {
+    padding: inherit; /* Inherit padding from parent */
+    margin: initial;  /* Reset margin to its initial value (usually 0) */
+    color: unset;     /* Remove inherited color (fallback to browser default) */
+    background-color: inherit; /* Inherit background color */
+}

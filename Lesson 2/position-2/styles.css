@@ -1,0 +1,78 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Container for the boxes */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Default box style */
+.box {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    border: 2px solid #ccc;
+}
+
+/* Content for scrolling */
+.content {
+    height: 1500px;
+    background-color: #e7e7e7;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Static (default) positioning */
+.static {
+    position: static;
+    background-color: #ffeb3b;
+}
+
+/* Relative positioning */
+.relative {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    background-color: #8bc34a;
+}
+
+/* Absolute positioning */
+.absolute {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #03a9f4;
+    width: 200px;
+}
+
+/* Fixed positioning */
+.fixed {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #e91e63;
+    width: 150px;
+    z-index: 10;
+}
+
+/* Sticky positioning */
+.sticky {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    background-color: #ff5722;
+    padding: 30px;
+    z-index: 5;
+}

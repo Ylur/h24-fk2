@@ -1,0 +1,50 @@
+
+/* Basic styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Element selector */
+p {
+    color: blue;
+    font-size: 18px;
+    padding: 10px;
+    background-color: #e0e0ff;
+}
+
+/* Class selector */
+.paragraph {
+    color: green; /* Overrides element selector */
+    font-size: 20px; /* Overrides element selector */
+}
+
+/* Another class */
+.special {
+    font-style: italic;
+    color: purple; /* Overrides previous class selector */
+}
+
+/* ID selector */
+#important {
+    color: orange; /* Overrides both class and element selectors */
+    font-weight: bold;
+}
+
+/* ID selector (higher specificity) */
+#unique-paragraph {
+    color: darkblue;
+}
+
+/* Universal selector (applies to all elements) */
+* {
+    border: 1px dashed #333;
+}
+
+/* Inline styles in HTML will override everything in the stylesheet */
