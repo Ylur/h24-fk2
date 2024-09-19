@@ -1,0 +1,42 @@
+.cv-container {
+  display: grid;
+  border: 1px solid black;
+  margin: 20px;
+  grid-template-columns: 40px 50px auto 1fr 40px;
+  grid-template-rows: 25% 100px auto;
+  gap: 2px;
+}
+
+.contact {
+  background-color: red;
+}
+
+header {
+  background-color: yellow;
+}
+
+box {
+}
+
+.blue {
+  grid-area: blue;
+  background-color: blue;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.red {
+  grid-area: red;
+  background-color: red;
+  grid-column-start: 3;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.orange {
+  grid-area: orange;
+  background-color: orange;
+}
