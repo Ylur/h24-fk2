@@ -1,0 +1,50 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Container for the boxes */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Default box style */
+.box {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Box 1: Example with specific margin, padding, and border */
+.example-1 {
+    padding: 20px;
+    margin: 20px;
+    border: 5px solid #4CAF50;
+    background-color: #e7f5e7;
+    box-shadow: 0 4px 8px rgba(35, 15, 15, 0.1);
+}
+
+/* Box 2: Example with larger padding, different border */
+.example-2 {
+    padding: 40px;
+    margin: 30px;
+    border: 10px dashed #2196F3;
+    background-color: #e0f2ff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the content inside the boxes */
+.box p {
+    margin: 0;
+    font-size: 18px;
+}
