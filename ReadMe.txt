@@ -1,3 +1,5 @@
+Glósur fyrir GIT / NPM / NPX ofl
+
 NPM = Node Package Manager / install globally or locally / npm install react - g til að install globally
 NPX = Node Package Executor / npx create-react-app my-app
 
