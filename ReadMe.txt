@@ -1,4 +1,7 @@
 Glósur fyrir GIT / NPM / NPX ofl
+mkdir = nýr folder 
+mkdir * nafn *  cd * nafn * npx create-react-app .
+
 
 NPM = Node Package Manager / install globally or locally / npm install react - g til að install globally
 NPX = Node Package Executor / npx create-react-app my-app
