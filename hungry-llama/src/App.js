@@ -7,7 +7,7 @@ import ContactPage from './pages/ContactPage';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="min-h-screen flex flex-col text-gray-800 bg-gray-100 p-4">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
