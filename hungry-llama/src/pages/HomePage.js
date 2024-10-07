@@ -13,7 +13,7 @@ function HomePage() {
         className="relative bg-cover bg-center h-96"
         style={{ backgroundImage: 'url("/photos/HL.png")' }} 
       >
-        <div className="absolute inset-0 bg-black opacity-50"></div> {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black opacity-50"></div> 
         <div className="relative flex items-center justify-center h-full">
           <div className="text-center text-white">
             <h1 className="text-5xl font-bold">Welcome to The Hungry Llama</h1>
@@ -22,7 +22,7 @@ function HomePage() {
         </div>
       </div>
 
-      {/* Main Content */}
+      
       <div className="container mx-auto p-8">
         <section>
           <h2 className="text-3xl font-bold text-center mb-6">Our Popular Dishes</h2>

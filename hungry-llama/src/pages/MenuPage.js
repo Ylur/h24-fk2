@@ -8,7 +8,7 @@ function MenuPage() {
       name: 'Chicken Caesar Salad',
       description:
         'Romaine Lettuce, Grilled Chicken, Parmesan Cheese, and Caesar Dressing',
-      image: '/photos/Dish1.png', 
+      image: '/photos/Dish1.png',
     },
     {
       name: 'Classic Cobb Salad',
@@ -29,25 +29,25 @@ function MenuPage() {
       name: 'Southwest Chicken Salad',
       description:
         'Grilled Chicken, Corn, Black Beans, Avocado, Tomatoes, and Chipotle Ranch Dressing',
-      image: '/photos/Dish4.png', // Adjusted image path
+      image: '/photos/Dish4.png',
     },
     {
       name: 'Grilled Chicken Salad',
       description:
         'Mixed Greens, Grilled Chicken, Cherry Tomatoes, Red Onion, and Balsamic Vinaigrette',
-      image: '/photos/Dish5.png', // Adjusted image path
+      image: '/photos/Dish5.png',
     },
     {
       name: 'Greek Chicken Salad',
       description:
         'Grilled Chicken, Feta Cheese, Cucumbers, Kalamata Olives, and Lemon-Olive Oil Dressing',
-      image: '/photos/Dish6.png', // Adjusted image path
+      image: '/photos/Dish6.png',
     },
     {
       name: 'Buffalo Chicken Salad',
       description:
         'Crispy Chicken Tenders, Mixed Greens, Carrots, Celery, Blue Cheese Crumbles, and Buffalo Ranch Dressing',
-      image: '/photos/Dish7.png', // Adjusted image path
+      image: '/photos/Dish7.png',
     },
   ];
 
@@ -55,18 +55,18 @@ function MenuPage() {
     {
       name: 'Grilled Chicken Panini',
       description: 'Mozzarella Cheese, Roasted Red Peppers, and Pesto Mayo',
-      image: '/photos/Dish8.png', // Adjusted image path
+      image: '/photos/Dish8.png',
     },
     {
       name: 'Chicken Salad Sandwich',
       description:
         'Shredded Chicken, Grapes, Almonds, and Lettuce on Whole Wheat Bread',
-      image: '/photos/Dish9.png', // Adjusted image path
+      image: '/photos/Dish9.png',
     },
   ];
 
   const sides = [
-    { name: 'Sweet Potato Fries', image: '/photos/Dish1.png' }, // Reuse or assign different photos as needed
+    { name: 'Sweet Potato Fries', image: '/photos/Dish1.png' },
     { name: 'Garlic Parmesan Fries', image: '/photos/Dish2.png' },
     { name: 'Grilled Vegetables', image: '/photos/Dish3.png' },
   ];
@@ -95,14 +95,27 @@ function MenuPage() {
   return (
     <>
       <Header />
+
+      <div
+        className="relative bg-cover bg-center h-96"
+        style={{ backgroundImage: 'url("/photos/HL.png")' }} 
+      >
+        <div className="absolute inset-0 bg-black opacity-50"></div> 
+        <div className="relative flex items-center justify-center h-full">
+          <div className="text-center text-white">
+            <h1 className="text-5xl font-bold">Our Llama Yama menu</h1>
+          </div>
+        </div>
+      </div>
+
       <div className="container mx-auto p-8">
-        <h1 className="text-4xl font-bold text-center mb-8">Our Menu</h1>
 
         {renderMenuSection('Starters', starters)}
         {renderMenuSection('Main Courses', mainCourses)}
         {renderMenuSection('Sandwiches', sandwiches)}
         {renderMenuSection('Sides', sides)}
       </div>
+
       <Footer />
     </>
   );
