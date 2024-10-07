@@ -8,6 +8,7 @@ npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init
 
 Fyrir format á kóðum 
+npm install prettier-plugin-tailwindcss --save-dev
 
 Þetta sér til þess að allt sé formattað með prettier fyrir commit
 npx husky-init && npm install
