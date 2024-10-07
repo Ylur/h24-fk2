@@ -1,7 +1,7 @@
 import Header from '../components/Header';
 import Hero from '../components/Hero';
-import DishPreview from '../components/DishPreview';
 import Footer from '../components/Footer';
+import DishGrid from '../components/DishGrid';
 
 function HomePage() {
   return (
@@ -12,7 +12,9 @@ function HomePage() {
         <h2 className="text-center text-3xl font-semibold mb-8">
           Our Popular Dishes
         </h2>
-        <DishPreview />
+        <div>
+          <DishGrid />
+        </div>
       </section>
       <Footer />
     </div>
