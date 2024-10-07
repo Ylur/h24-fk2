@@ -22,7 +22,7 @@ function HomePage() {
         </div>
       </div>
 
-      
+
       <div className="container mx-auto p-8">
         <section>
           <h2 className="text-3xl font-bold text-center mb-6">Our Popular Dishes</h2>
