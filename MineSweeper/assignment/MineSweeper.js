@@ -8,8 +8,8 @@ let gameEnded = false;
 
 // Initialize the game
 function initGame() {
-  const gameBoardElement = document.getElementById('game-board');
-  gameBoardElement.innerHTML = ''; // Clear the board
+  const gameBoardElement = document.getElementById("game-board");
+  gameBoardElement.innerHTML = ""; // Clear the board
   gameEnded = false; // Reset game state
 
   gameBoard = [];
@@ -18,14 +18,14 @@ function initGame() {
   for (let row = 0; row < boardSize; row++) {
     const rowArray = [];
     for (let col = 0; col < boardSize; col++) {
-      const cell = document.createElement('div');
-      cell.classList.add('cell');
-      
+      const cell = document.createElement("div");
+      cell.classList.add("cell");
+
       // On left-click element
-      cell.addEventListener('click', () => revealCell(row, col));
+      cell.addEventListener("click", () => revealCell(row, col));
 
       // On right-click element
-      cell.addEventListener('contextmenu', (e) => {
+      cell.addEventListener("contextmenu", (e) => {
         e.preventDefault();
         toggleFlag(row, col);
       });
@@ -49,19 +49,19 @@ function generateBombs(size, count) {
 
 // Reveal a cell when clicked
 function revealCell(row, col) {
-  if (gameEnded || gameBoard[row][col].classList.contains('revealed')) {
+  if (gameEnded || gameBoard[row][col].classList.contains("revealed")) {
     return;
   }
 
   const index = row * boardSize + col;
 
   if (bombPositions.includes(index)) {
-    gameBoard[row][col].classList.add('bomb');
+    gameBoard[row][col].classList.add("bomb");
     gameBoard[row][col].innerHTML = "💣"; // Bomb emoji
     endGame(false);
   } else {
     const bombCount = countBombsAround(row, col);
-    gameBoard[row][col].classList.add('revealed');
+    gameBoard[row][col].classList.add("revealed");
     if (bombCount > 0) {
       gameBoard[row][col].innerHTML = bombCount;
     } else {
@@ -94,7 +94,7 @@ function revealEmptyCells(row, col) {
   for (let r = row - 1; r <= row + 1; r++) {
     for (let c = col - 1; c <= col + 1; c++) {
       if (r >= 0 && r < boardSize && c >= 0 && c < boardSize) {
-        if (!gameBoard[r][c].classList.contains('revealed')) {
+        if (!gameBoard[r][c].classList.contains("revealed")) {
           revealCell(r, c);
         }
       }
@@ -104,14 +104,14 @@ function revealEmptyCells(row, col) {
 
 // Toggle flagging on a cell
 function toggleFlag(row, col) {
-  if (gameEnded || gameBoard[row][col].classList.contains('revealed')) {
+  if (gameEnded || gameBoard[row][col].classList.contains("revealed")) {
     return;
   }
 
-  if (gameBoard[row][col].innerHTML === '') {
-    gameBoard[row][col].innerHTML = '🚩'; // Flag emoji
-  } else if (gameBoard[row][col].innerHTML === '🚩') {
-    gameBoard[row][col].innerHTML = ''; // Remove flag
+  if (gameBoard[row][col].innerHTML === "") {
+    gameBoard[row][col].innerHTML = "🚩"; // Flag emoji
+  } else if (gameBoard[row][col].innerHTML === "🚩") {
+    gameBoard[row][col].innerHTML = ""; // Remove flag
   }
 }
 
@@ -120,8 +120,8 @@ function revealAllBombs() {
   for (let i = 0; i < bombPositions.length; i++) {
     const row = Math.floor(bombPositions[i] / boardSize);
     const col = bombPositions[i] % boardSize;
-    gameBoard[row][col].classList.add('bomb');
-    gameBoard[row][col].innerHTML = '💣'; // Show bomb emoji
+    gameBoard[row][col].classList.add("bomb");
+    gameBoard[row][col].innerHTML = "💣"; // Show bomb emoji
   }
 }
 
@@ -129,9 +129,9 @@ function revealAllBombs() {
 function endGame(won) {
   gameEnded = true;
   if (won) {
-    alert('Congratulations, You Win!');
+    alert("Congratulations, You Win!");
   } else {
-    alert('Game Over! Click Click BOOOM!');
+    alert("Game Over! Click Click BOOOM!");
     revealAllBombs();
   }
 }
@@ -142,7 +142,10 @@ function checkWinCondition() {
   for (let row = 0; row < boardSize; row++) {
     for (let col = 0; col < boardSize; col++) {
       const index = row * boardSize + col;
-      if (!bombPositions.includes(index) && !gameBoard[row][col].classList.contains('revealed')) {
+      if (
+        !bombPositions.includes(index) &&
+        !gameBoard[row][col].classList.contains("revealed")
+      ) {
         allCellsRevealed = false;
         break;
       }
