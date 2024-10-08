@@ -138,23 +138,13 @@ const complexWizards = [
 ]
 
 const renderAllTheWizards = (wizards) => {
-    // ... Do something to generate the three wizards within an un ordered list, colored by their 'hair' property
+    const ulElement = document.getElementById('list')
+    wizards.forEach({ name, hair }=> {
+    const liElement = document.createElement('li')
+    liElement.textContent = name
+    liElement.style.color = hair
+    ulElement.appendChild(liElement)
+})
 }
 
 renderAllTheWizards(complexWizards)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
