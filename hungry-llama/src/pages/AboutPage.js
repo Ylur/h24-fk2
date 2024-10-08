@@ -24,11 +24,24 @@ function AboutPage() {
           wide selection of refreshing beverages and cocktails to complement
           your meal.
           <br />
+          <br />
         </p>
         <p className="text-lg text-gray-700 mt-4 text-center">
           Come join us at <span className="font-bold">The Hungry Llama</span>,
           where good food meets great company!
         </p>
+        <br />
+        <br />
+        <div
+          className="relative bg-cover bg-center h-96"
+          style={{ backgroundImage: 'url("/photos/HL.png")' }}
+        >
+          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <div className="relative flex items-center justify-center h-full">
+            <div className="text-center text-white">
+            </div>
+          </div>
+        </div>
       </div>
       <Footer />
     </>
