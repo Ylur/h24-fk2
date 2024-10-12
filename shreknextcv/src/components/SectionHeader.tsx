@@ -7,7 +7,7 @@ interface SectionHeaderProps {
 
 const SectionHeader: React.FC<SectionHeaderProps> = ({ title }) => {
   return (
-    <header className="bg-orange-500 text-white p-4 text-center mt-8">
+    <header className="bg-orange-500 text-white p-10 text-center mt-8">
       <h2 className="text-2xl font-bold">{title}</h2>
     </header>
   );

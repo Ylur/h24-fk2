@@ -7,61 +7,71 @@ import ContactInformation from "../src/components/ContactInformation";
 import SkillsSection from "../src/components/SkillsSection";
 import WorkExperienceSection from "../src/components/WorkExperienceSection";
 import EducationSection from "../src/components/EducationSection";
+import PageHeader from "@/components/PageHeader";  // Make sure this path is correct
 
 const Home: React.FC = () => {
   return (
-    // Mynda functionið
-    <div className="min-h-screen flex flex-col">
-      <main className="flex-grow p-8">
-      <SectionHeader title="" />
-        <PhotoUpload />
-        
-        <br></br>
-        <br></br>
+    <>
+      {/* Page Header*/}
+      <PageHeader />
 
-        {/* contact info*/}
-        <div className="text-left bg-orange-500 border rounded ">
-          <SectionHeader title="Contact Information" />
-          <ContactInformation />
-        </div>
-        <br></br>
-        <br></br>
-        {/* Skillz */}
-        <div className="text-left bg-orange-500 border rounded ">
-          <SectionHeader title="Skills" />
-          <SkillsSection />
-        </div>
+      <div className="min-h-screen flex flex-col">
+        <main className="flex-grow p-8">
+          {/* Section Header*/}
+          <SectionHeader title="" />
 
-        <br></br>
-        <br></br>
+          <PhotoUpload />
 
-        {/* Reynsla*/}
-        <div className="bg-orange-500 border rounded "> 
-          <SectionHeader title="Work Experience" />
-          <WorkExperienceSection />
-        </div>
+          <br />
+          <br />
 
-        <br></br>
-        <br></br>
+          {/* Contact Info */}
+          <div className="text-left bg-orange-500 border rounded ">
+            <SectionHeader title="Contact Information" />
+            <ContactInformation />
+          </div>
 
-          {/* Menntun */}
-        <div className="bg-orange-500 border rounded ">
-          <SectionHeader title="Education" />
-          <EducationSection />
-        </div>
+          <br />
+          <br />
 
-        <br></br>
-        <br></br>
+          {/* Skills */}
+          <div className="text-left bg-orange-500 border rounded ">
+            <SectionHeader title="Skills" />
+            <SkillsSection />
+          </div>
 
-        {/* Um þig - já svona opnaðu þig*/}
-        <div className="bg-orange-500 border rounded ">
-          <SectionHeader title="About Me" />
-          <AboutSection />
-        </div>
+          <br />
+          <br />
 
-      </main>
-      <Footer />
-    </div>
+          {/* Work Experience */}
+          <div className="bg-orange-500 border rounded ">
+            <SectionHeader title="Work Experience" />
+            <WorkExperienceSection />
+          </div>
+
+          <br />
+          <br />
+
+          {/* Education */}
+          <div className="bg-orange-500 border rounded ">
+            <SectionHeader title="Education" />
+            <EducationSection />
+          </div>
+
+          <br />
+          <br />
+
+          {/* About Me */}
+          <div className="bg-orange-500 border rounded ">
+            <SectionHeader title="About Me" />
+            <AboutSection />
+          </div>
+        </main>
+
+        {/* Footer */}
+        <Footer />
+      </div>
+    </>
   );
 };
 
