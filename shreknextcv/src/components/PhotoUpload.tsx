@@ -15,7 +15,7 @@ const PhotoUpload: React.FC = () => {
 
   return (
     <div className="mt-4">
-      <label htmlFor="photo-upload" className="block text-lg font-bold">
+      <label htmlFor="photo-upload" className="block text-lg font-bold text-center">
         Upload Photo:
       </label>
       <input
