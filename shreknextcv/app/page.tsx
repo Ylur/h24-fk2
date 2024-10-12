@@ -1,6 +1,6 @@
 import React from "react";
 import SectionHeader from "../src/components/SectionHeader";
-import Footer from "../src/components/footer";
+import Footer from "../src/components/SectionFooter";
 import PhotoUpload from "../src/components/PhotoUpload";
 import AboutSection from "../src/components/AboutSection";
 import ContactInformation from "../src/components/ContactInformation";
@@ -10,31 +10,53 @@ import EducationSection from "../src/components/EducationSection";
 
 const Home: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col text-left">
-      <SectionHeader title="Bonjour">
-      </SectionHeader>
-      
-
+    // Mynda functionið
+    <div className="min-h-screen flex flex-col">
       <main className="flex-grow p-8">
+      <SectionHeader title="" />
         <PhotoUpload />
-        <div className="bg-orange-500">
-        <ContactInformation />
+        
+        <br></br>
+        <br></br>
+
+        {/* contact info*/}
+        <div className="text-left bg-orange-500 border rounded ">
+          <SectionHeader title="Contact Information" />
+          <ContactInformation />
+        </div>
+        <br></br>
+        <br></br>
+        {/* Skillz */}
+        <div className="text-left bg-orange-500 border rounded ">
+          <SectionHeader title="Skills" />
+          <SkillsSection />
         </div>
 
-        <div className="bg-orange-500">
-        <SkillsSection />
+        <br></br>
+        <br></br>
+
+        {/* Reynsla*/}
+        <div className="bg-orange-500 border rounded "> 
+          <SectionHeader title="Work Experience" />
+          <WorkExperienceSection />
         </div>
 
-        <div className="bg-orange-500"> 
-        <WorkExperienceSection />
+        <br></br>
+        <br></br>
+
+          {/* Menntun */}
+        <div className="bg-orange-500 border rounded ">
+          <SectionHeader title="Education" />
+          <EducationSection />
         </div>
 
-        <div className="bg-orange-500">
-        <EducationSection />
-      </div>
+        <br></br>
+        <br></br>
 
-        <div className="bg-orange-500">
-        <AboutSection />
+        {/* Um þig - já svona opnaðu þig*/}
+        <div className="bg-orange-500 border rounded ">
+          <SectionHeader title="About Me" />
+          <AboutSection />
         </div>
 
       </main>
@@ -44,4 +66,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-

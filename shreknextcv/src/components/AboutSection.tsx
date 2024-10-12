@@ -11,7 +11,7 @@ const AboutSection: React.FC = () => {
 
   return (
     <section id="about" className="mb-8">
-      <h2 className="text-2xl font-bold mb-4">About</h2>
+      <h2 className="text-2xl font-bold mb-4"></h2>
       <textarea
         className="w-full p-4 border rounded-lg resize-none focus:outline-none focus:ring focus:border-blue-500"
         rows={4}
