@@ -17,8 +17,7 @@ const Home: React.FC = () => {
 
       <div className="min-h-screen flex flex-col">
         <main className="flex-grow p-8">
-          {/* Section Header*/}
-          <SectionHeader title="" />
+         
 
           <PhotoUpload />
 

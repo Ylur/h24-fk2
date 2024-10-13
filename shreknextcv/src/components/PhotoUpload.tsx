@@ -1,4 +1,4 @@
-"use client"; // til að sleppa við server ves
+"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -14,8 +14,19 @@ const PhotoUpload: React.FC = () => {
   };
 
   return (
-    <div className="mt-4">
-      <label htmlFor="photo-upload" className="block text-lg font-bold text-center">
+    <div className="mt-4 flex flex-col items-center">
+      {image && (
+        <div className="relative h-56 w-56 md:w-64 lg:w-72 mb-4">
+          <Image
+            src={image}
+            alt="Uploaded Photo"
+            layout="fill"
+            objectFit="contain"
+            className="rounded-lg shadow-lg"
+          />
+        </div>
+      )}
+      <label htmlFor="photo-upload" className="block text-lg font-bold mb-2">
         Upload Photo:
       </label>
       <input
@@ -23,19 +34,8 @@ const PhotoUpload: React.FC = () => {
         id="photo-upload"
         accept="image/*"
         onChange={handleImageUpload}
-        className="mt-2 block p-2 border"
+        className="border-2 border-gray-300 rounded-lg p-3 hover:border-blue-500"
       />
-      {image && (
-        <div className="relative mt-4 h-32 w-32">
-          <Image
-            src={image}
-            alt="Uploaded Photo"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-full"
-          />
-        </div>
-      )}
     </div>
   );
 };
