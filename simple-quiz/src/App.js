@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const questions = [
   {
-    questionText: 'What is the name of our teachers App?',
+    questionText: 'What is the name of our teacher\'s App?',
     answerOptions: [
       { answerText: 'Smitter', isCorrect: false },
       { answerText: 'Bitter', isCorrect: false },
@@ -50,17 +50,20 @@ function App() {
 
   const handleResetClick = () => {
     setCurrentQuestion(0);
-    setScore(0);  
+    setScore(0);
     setShowScore(false);
   };
 
   return (
     <div className="h-screen bg-pink-100 flex justify-center items-center">
-      <div className="w-full max-w-md p-6 bg-white rounded shadow-lg">
+      <div className="relative p-6 bg-white rounded shadow-lg max-w-md w-full">
+        <div className="absolute inset-0 p-1 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-lg">
+          <div className="h-full w-full bg-white rounded-md">
+        
         {showScore ? (
           <div>
             <div className="text-2xl font-bold mb-4">
-             Vá en klár - You scored {score} out of {questions.length}
+              Vá en klár - You scored {score} out of {questions.length}
             </div>
             <button
               onClick={handleResetClick}
@@ -91,6 +94,8 @@ function App() {
             </div>
           </>
         )}
+      </div>
+      </div>
       </div>
     </div>
   );
