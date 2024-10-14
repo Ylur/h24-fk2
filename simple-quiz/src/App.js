@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import './App.css'; // fancy fyrir litað border
 
 const questions = [
   {
-    questionText: 'What is the name of our teacher\'s App?',
+    questionText: "What is the name of our teacher's App?",
     answerOptions: [
       { answerText: 'Smitter', isCorrect: false },
       { answerText: 'Bitter', isCorrect: false },
@@ -55,47 +56,49 @@ function App() {
   };
 
   return (
-    <div className="h-screen bg-pink-100 flex justify-center items-center">
+    <div
+      className="h-screen bg-pink-100 flex justify-center items-center"
+      data-label="Background"
+    >
       <div className="relative p-6 bg-white rounded shadow-lg max-w-md w-full">
-        <div className="absolute inset-0 p-1 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-lg">
+        <div className="absolute inset-0 p-1 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-lg gradient-border">
           <div className="h-full w-full bg-white rounded-md">
-        
-        {showScore ? (
-          <div>
-            <div className="text-2xl font-bold mb-4">
-              Vá en klár - You scored {score} out of {questions.length}
-            </div>
-            <button
-              onClick={handleResetClick}
-              className="mt-4 bg-blue-500 text-white px-4 py-2 rounded shadow"
-            >
-              Reset Quiz
-            </button>
+            {showScore ? (
+              <div>
+                <div className="text-2xl font-bold mb-4">
+                  Vá en klár - You scored {score} out of {questions.length}
+                </div>
+                <button
+                  onClick={handleResetClick}
+                  className="mt-4 bg-blue-500 text-white px-4 py-2 rounded shadow"
+                >
+                  Reset Quiz
+                </button>
+              </div>
+            ) : (
+              <>
+                <div className="text-xl font-bold mb-4">
+                  {questions[currentQuestion].questionText}
+                </div>
+                <div className="flex flex-col space-y-4">
+                  {questions[currentQuestion].answerOptions.map(
+                    (answerOption, index) => (
+                      <button
+                        key={index}
+                        onClick={() =>
+                          handleAnswerOptionClick(answerOption.isCorrect)
+                        }
+                        className="bg-gray-200 p-4 rounded shadow hover:bg-blue-300"
+                      >
+                        {answerOption.answerText}
+                      </button>
+                    )
+                  )}
+                </div>
+              </>
+            )}
           </div>
-        ) : (
-          <>
-            <div className="text-xl font-bold mb-4">
-              {questions[currentQuestion].questionText}
-            </div>
-            <div className="flex flex-col space-y-4">
-              {questions[currentQuestion].answerOptions.map(
-                (answerOption, index) => (
-                  <button
-                    key={index}
-                    onClick={() =>
-                      handleAnswerOptionClick(answerOption.isCorrect)
-                    }
-                    className="bg-gray-200 p-4 rounded shadow hover:bg-blue-300"
-                  >
-                    {answerOption.answerText}
-                  </button>
-                )
-              )}
-            </div>
-          </>
-        )}
-      </div>
-      </div>
+        </div>
       </div>
     </div>
   );
