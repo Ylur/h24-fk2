@@ -125,8 +125,10 @@ myFunction('gedcba') Expected 'ged'
 // Remove the last 3 characters of a
 // Return the result
 const removeLastNChractersOfString = (a) => {
-  return
+  return a.slice(0, 3);
 }
+console.log(removeLastNChractersOfString('abcdefgh'));
+
 
 /*
 Test cases:
@@ -142,8 +144,9 @@ myFunction('fgedcba') Expected 'fged'
 // Otherwise, return false
 // Tip: How does the % operator work?
 const checkIfNumberIsEven = (a) => {
-  return
+  return a % 2 === 0;
 }
+console.log(checkIfNumberIsEven(10));
 
 /*
 Test Cases:
@@ -158,8 +161,9 @@ myFunction(-111) Expected false
 // Write a function that takes two numbers (a and b) as argument
 // Return b percent of a
 const getPercentageOfNumber = (a, b) => {
-  return
+  return (a * b) / 100;
 }
+console.log(getPercentageOfNumber(100, 50));
 
 /*
 Test cases:
@@ -179,9 +183,11 @@ myFunction(500,25) Expected 125
 // - Mind the order
 // - Power operator is either Math.pow or **
 //   - e.g. 2**2 = 4
+
 const useAllTheOperators = (a, b, c, d, e, f) => {
-  return
+  return ((a + b - c) * d / e) ** f;
 }
+console.log(useAllTheOperators(6, 5, 4, 3, 2, 1));
 
 /*
 Test cases:
