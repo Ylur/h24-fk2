@@ -1,0 +1,97 @@
+/* síminn pay css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+  }
+  
+  /*container utan um allt */
+  .allt {
+
+    margin: 1em;
+    background-color: #f0f0f0;
+
+  }
+
+
+  /* skipting á container*/
+  .split-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  /* Texti vinstra meginn */
+  .text-section {
+    flex: 1;
+    padding: 50px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .text-section header h1 {
+    color: #05509f;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .text-section header p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .text-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .text-section ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  
+  /* Takkarnir, btn = button */
+  .buttons {
+    margin-top: 30px;
+  }
+  
+  .primary-btn, .secondary-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: 1px solid #007bff;
+    cursor: pointer;
+  }
+  
+  .primary-btn {
+    background-color: white;
+    color: #007bff;
+    margin-right: 10px;
+  }
+  
+  .secondary-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* hægri hliðin - myndin */
+  .image-section {
+    flex: 1;
+    background-color: #f0f0f0;
+  }
+  
+  .pay-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
