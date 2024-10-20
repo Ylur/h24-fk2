@@ -39,11 +39,10 @@ myFunction([99,1,1]) Expected []
 // It should return the last n elements of a
 // Tip: use the array prototype function slice()
 
-const removeLastNElements = (a, n ) => {
+const removeLastNElements = (a, n) => {
   return a.slice(-n);
 };
-console.log(removeLastNElements([1, 2, 3, 4, 5], 2)); 
-
+console.log(removeLastNElements([1, 2, 3, 4, 5], 2));
 
 /*
 Test cases:
@@ -75,7 +74,7 @@ myFunction([4,3,2,1,0]) Expected 5
 // Return the number of negative values in the array
 
 const countNumberOfNegativeValues = (a) => {
-  return a.filter(num => num < 0).length;
+  return a.filter((num) => num < 0).length;
 };
 console.log(countNumberOfNegativeValues([1, -2, 2, -4]));
 
@@ -124,9 +123,12 @@ myFunction([-50,0,50,200]) Expected 50
 // Return the longest string
 
 const getLongestStringFromArray = (arr) => {
-  return arr.reduce((longest, current) => current.length > longest.length ? current : longest, "");
+  return arr.reduce(
+    (longest, current) => (current.length > longest.length ? current : longest),
+    ""
+  );
 };
-console.log(getLongestStringFromArray(['help', 'me']));
+console.log(getLongestStringFromArray(["help", "me"]));
 
 /*
 Test cases:
@@ -140,7 +142,7 @@ myFunction(['I', 'need', 'candy']) Expected 'candy'
 // It should return false otherwise
 
 const areAllEqual = (arr) => {
-  return arr.every(val => val === arr[0]);
+  return arr.every((val) => val === arr[0]);
 };
 console.log(areAllEqual([true, true, true, true]));
 

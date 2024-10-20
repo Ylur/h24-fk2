@@ -7,7 +7,7 @@
 const checkIfPropertyExistsAndTruthy = (a, b) => {
   return a[b] ? true : false;
 };
-console.log(checkIfPropertyExistsAndTruthy({ a: 1, b: 2, c: 3 }, 'b'));
+console.log(checkIfPropertyExistsAndTruthy({ a: 1, b: 2, c: 3 }, "b"));
 
 /*
 Test cases:
@@ -24,7 +24,7 @@ myFunction({x:'a',b:'b',z:undefined},'z') Expected false
 const getCountry = (obj) => {
   return obj.country;
 };
-console.log(getCountry({ continent: 'Asia', country: 'Japan' }));
+console.log(getCountry({ continent: "Asia", country: "Japan" }));
 
 /*
 Test cases:
@@ -38,9 +38,9 @@ myFunction({ country: 'Sweden', continent: 'Europe' }) Expected 'Sweden'
 // It should return the value of the property with key 'prop-2'
 
 const getWeirdKeyValue = (obj) => {
-  return obj['prop-2'];
+  return obj["prop-2"];
 };
-console.log(getWeirdKeyValue({ one: 1, 'prop-2': 2 }));
+console.log(getWeirdKeyValue({ one: 1, "prop-2": 2 }));
 
 /*
 Test cases:
@@ -56,7 +56,9 @@ myFunction({  'prop-2': 'two',  prop: 'test'}) Expected 'two'
 const getPropertyByString = (obj, key) => {
   return obj[key];
 };
-console.log(getPropertyByString({ continent: 'Asia', country: 'Japan' }, 'continent'));
+console.log(
+  getPropertyByString({ continent: "Asia", country: "Japan" }, "continent")
+);
 
 /*
 Test cases:
@@ -73,7 +75,7 @@ myFunction({  country: 'Sweden',  continent: 'Europe'}, 'country') Expected 'Swe
 const checkIfPropertyExists = (a, b) => {
   return a.hasOwnProperty(b);
 };
-console.log(checkIfPropertyExists({ a: 1, b: 2, c: 3 }, 'b'));
+console.log(checkIfPropertyExists({ a: 1, b: 2, c: 3 }, "b"));
 
 /*
 Test cases:
@@ -91,7 +93,7 @@ myFunction({x:'a',y:'b',z:undefined},'z') Expected true
 const createObjectWithKeyValue = (a) => {
   return { key: a };
 };
-console.log(createObjectWithKeyValue('a'));
+console.log(createObjectWithKeyValue("a"));
 
 /*
 Test cases:
@@ -109,7 +111,7 @@ myFunction('b') Expected {key:'b'}
 const createObjectWithKeyAndValue = (a, b) => {
   return { [a]: b };
 };
-console.log(createObjectWithKeyAndValue('a', 'b'));
+console.log(createObjectWithKeyAndValue("a", "b"));
 
 /*
 Test cases:
@@ -127,7 +129,7 @@ myFunction('b','w') Expected {b:'w'}
 const createObjectFromArrays = (a, b) => {
   return Object.fromEntries(a.map((key, i) => [key, b[i]]));
 };
-console.log(createObjectFromArrays(['a', 'b', 'c'], [1, 2, 3]));
+console.log(createObjectFromArrays(["a", "b", "c"], [1, 2, 3]));
 
 /*
 Test cases:
@@ -234,7 +236,9 @@ myFunction({ a: 5, b: 4 }, { c: 3, b: 1, e: 2 }) Expected { a: 5, b: 4, c: 3, e:
 // Multiply all values of 'a' by 'b'
 
 const multipyAllValuesByB = (a, b) => {
-  return Object.fromEntries(Object.entries(a).map(([key, val]) => [key, val * b]));
+  return Object.fromEntries(
+    Object.entries(a).map(([key, val]) => [key, val * b])
+  );
 };
 console.log(multipyAllValuesByB({ a: 1, b: 2, c: 3 }, 3));
 

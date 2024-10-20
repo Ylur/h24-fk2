@@ -3,10 +3,10 @@
 // Return the result
 
 const calcSum = (a, b) => {
-  return a + b
-}
-const a = 1
-const b = 2
+  return a + b;
+};
+const a = 1;
+const b = 2;
 
 console.log(a + b);
 
@@ -24,9 +24,9 @@ calcSum(99,1) Expected 100
 
 const strictEquality = (a, b) => {
   return a === b;
-}
+};
 console.log(strictEquality(1, 2));
-console.log(strictEquality('1', 2));
+console.log(strictEquality("1", 2));
 console.log(strictEquality(2, 2));
 
 /*
@@ -43,8 +43,8 @@ myFunction('10', '10') Expected true
 // Return the type of the value
 
 const getTypeOfValue = (a) => {
-  return typeof a 
-}
+  return typeof a;
+};
 console.log(getTypeOfValue(1));
 
 /*
@@ -65,14 +65,14 @@ myFunction(['array']) Expected 'object'
 
 const getSlicedChar = (a) => {
   return a.slice(0, 1);
-}
-console.log(getSlicedChar('node basics.js'));
+};
+console.log(getSlicedChar("node basics.js"));
 
 //
 const getFirstChar = (a) => {
-return a[0];
-}
-console.log(getFirstChar('node basics.js'));
+  return a[0];
+};
+console.log(getFirstChar("node basics.js"));
 
 /*
 Test Cases:
@@ -88,9 +88,8 @@ myFunction('gfedcba') Expected 'g'
 // Tip: look up the string prototype function slice() or split()
 const getNthChar = (a, n) => {
   return a.slice(n - 1, n);
-}
-console.log(getNthChar('nodes', 3)); 
-
+};
+console.log(getNthChar("nodes", 3));
 
 /*
 Test Cases:
@@ -107,10 +106,9 @@ myFunction('gfedcba',3) Expected 'e'
 // Tip: look up the string prototype function slice() or split()
 const extractFirstHalfOfString = (testing) => {
   return testing.slice(0, Math.floor(testing.length / 2));
-}
+};
 const testing = "test strengur";
 console.log(extractFirstHalfOfString(testing));
-
 
 /*
 Test Cases:
@@ -126,9 +124,8 @@ myFunction('gedcba') Expected 'ged'
 // Return the result
 const removeLastNChractersOfString = (a) => {
   return a.slice(0, 3);
-}
-console.log(removeLastNChractersOfString('abcdefgh'));
-
+};
+console.log(removeLastNChractersOfString("abcdefgh"));
 
 /*
 Test cases:
@@ -145,7 +142,7 @@ myFunction('fgedcba') Expected 'fged'
 // Tip: How does the % operator work?
 const checkIfNumberIsEven = (a) => {
   return a % 2 === 0;
-}
+};
 console.log(checkIfNumberIsEven(10));
 
 /*
@@ -162,7 +159,7 @@ myFunction(-111) Expected false
 // Return b percent of a
 const getPercentageOfNumber = (a, b) => {
   return (a * b) / 100;
-}
+};
 console.log(getPercentageOfNumber(100, 50));
 
 /*
@@ -185,8 +182,8 @@ myFunction(500,25) Expected 125
 //   - e.g. 2**2 = 4
 
 const useAllTheOperators = (a, b, c, d, e, f) => {
-  return ((a + b - c) * d / e) ** f;
-}
+  return (((a + b - c) * d) / e) ** f;
+};
 console.log(useAllTheOperators(6, 5, 4, 3, 2, 1));
 
 /*
