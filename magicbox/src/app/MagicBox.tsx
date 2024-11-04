@@ -1,4 +1,4 @@
-// MagicBox.tsx
+
 "use client";
 import React, {
   useRef,
@@ -20,51 +20,42 @@ const tailwindColors = [
   "bg-orange-500",
 ];
 
-// TODO: According to this type, add these functions to this component to be used within the parent component.
-// Hint: useImperativeHandle
 type MagicBoxHandle = {
   changeColor: () => void;
   resize: () => void;
   wiggle: () => void;
 };
 
-type MagicBoxRef = MagicBoxHandle & HTMLDivElement;
-
-// eslint-disable-next-line react/display-name
 const MagicBox = forwardRef<MagicBoxHandle>((_, ref) => {
-  const boxRef = useRef<MagicBoxRef>(null);
-  // Using state to maintain size and color
-  const [size, setSize] = useState("20");
+  const boxRef = useRef<HTMLDivElement>(null);
+  const [size, setSize] = useState(80); // Initial size in pixels
   const [colorClass, setColorClass] = useState("bg-red-500");
 
   // Random color generator
   function randomColor() {
-    // Get a random color from tailwindColors
     const randomIndex = Math.floor(Math.random() * tailwindColors.length);
     return tailwindColors[randomIndex];
   }
 
   const changeColor = () => {
-    // Update the color state with a random color
     const newColor = randomColor();
     setColorClass(newColor);
   };
 
   const resize = () => {
-    // Toggle size between "20" and "40"
-    const newSize = size === "20" ? "40" : "20";
+    const newSize = size === 80 ? 160 : 80; // Toggle between sizes
     setSize(newSize);
   };
 
   const wiggle = () => {
-    // Add and then remove an animation from the classlist of a component
     if (boxRef.current) {
       boxRef.current.classList.add("animate-wiggle");
-      setTimeout(() => boxRef.current?.classList.remove("animate-wiggle"), 2000);
+      setTimeout(() => {
+        boxRef.current?.classList.remove("animate-wiggle");
+      }, 500); // Duration matches the animation duration
     }
   };
 
-  // Expose the functions to the parent component
   useImperativeHandle(ref, () => ({
     changeColor,
     resize,
@@ -74,10 +65,13 @@ const MagicBox = forwardRef<MagicBoxHandle>((_, ref) => {
   return (
     <div
       ref={boxRef}
-      className={`w-${size} h-${size} ${colorClass} transition-all duration-500`}
+      style={{ width: size, height: size }}
+      className={`${colorClass} transition-all duration-500`}
     />
   );
 });
+
+MagicBox.displayName = "MagicBox";
 
 // Parent Component
 function MagicBoxParent() {
@@ -88,18 +82,18 @@ function MagicBoxParent() {
       <h1>Magic Box!</h1>
       <button
         onClick={() => magicBoxRef.current?.changeColor()}
-        className="m-4 border"
+        className="m-4 border p-2"
       >
         Change Color
       </button>
       <button
-        className="m-4 border"
+        className="m-4 border p-2"
         onClick={() => magicBoxRef.current?.resize()}
       >
         Resize
       </button>
       <button
-        className="m-4 border"
+        className="m-4 border p-2"
         onClick={() => magicBoxRef.current?.wiggle()}
       >
         Wiggle
