@@ -38,6 +38,7 @@ const TaskManagerApp: React.FC = () => {
   );
 
   const [newTask, setNewTask] = useState<string>("");
+  const [search, setSearch] = useState<string>("");
 
   const handleAddTask = () => {
     setTasks([
@@ -55,11 +56,22 @@ const TaskManagerApp: React.FC = () => {
     );
   };
 
+  const filteredTasks = tasks.filter((task) =>
+    task.title.toLowerCase().includes(search.toLowerCase())
+  );
+
   console.log("App rendered");
 
   return (
     <div>
       <h1>Task Manager</h1>
+      <input
+        type="text"
+        placeholder="Search tasks"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      <br />
       <input
         type="text"
         placeholder="New task"
@@ -68,7 +80,7 @@ const TaskManagerApp: React.FC = () => {
       />
       <button onClick={handleAddTask}>Add Task</button>
       <ul>
-        {tasks.map((task) => (
+        {filteredTasks.map((task) => (
           <TaskItem key={task.id} task={task} onToggle={handleToggleTask} />
         ))}
       </ul>
