@@ -7,7 +7,7 @@ const LoginPage = () => {
 
   const handleLogin = () => {
     //  login logic 
-    console.log("Logging in with", username, password);
+    console.log("Skráðu þig inn hér", username, password);
   };
 
   return (
