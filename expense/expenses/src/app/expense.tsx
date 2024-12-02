@@ -1,7 +1,9 @@
-"use client";
-import { useState } from "react";
+//duckafuck hvað ég skil ekkert í serverum :(
 
-// Define the Expense type
+'use client'
+import { useState, useEffect } from 'react';
+
+// info sem er skrifað í appið
 interface Expense {
   id: number;
   name: string;
@@ -10,22 +12,65 @@ interface Expense {
 
 const Expenses = () => {
   const [expenses, setExpenses] = useState<Expense[]>([]);
-  const [expenseName, setExpenseName] = useState("");
-  const [expenseAmount, setExpenseAmount] = useState("");
+  const [expenseName, setExpenseName] = useState('');
+  const [expenseAmount, setExpenseAmount] = useState('');
+
+  // sækja  expenses frá API 
+  useEffect(() => {
+    fetch('http://localhost:3001/api/expenses')
+      .then((response) => response.json())
+      .then((data) => setExpenses(data))
+      .catch((error) => console.error('Error fetching expenses:', error));
+  }, []);
 
   const addExpense = () => {
     if (!expenseName || !expenseAmount) return;
 
-    setExpenses([
-      ...expenses,
-      { id: Date.now(), name: expenseName, amount: parseFloat(expenseAmount) },
-    ]);
-    setExpenseName("");
-    setExpenseAmount("");
+    const newExpense = {
+      name: expenseName,
+      amount: parseFloat(expenseAmount),
+    };
+
+    fetch('http://localhost:3001/api/create-expense', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newExpense),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          return response.json().then((error) => {
+            throw new Error(error.error || 'Failed to add expense.');
+          });
+        }
+        return response.json();
+      })
+      .then((createdExpense) => {
+        setExpenses([...expenses, createdExpense]);
+        setExpenseName('');
+        setExpenseAmount('');
+      })
+      .catch((error) => {
+        console.error('Error adding expense:', error);
+        alert(`Error adding expense: ${error.message}`);
+      });
   };
 
   const removeExpense = (id: number) => {
-    setExpenses(expenses.filter((expense) => expense.id !== id));
+    fetch(`http://localhost:3001/api/expense/${id}`, {
+      method: 'DELETE',
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to delete expense.');
+        }
+        setExpenses(expenses.filter((expense) => expense.id !== id));
+      })
+      .catch((error) => {
+        console.error('Error deleting expense:', error);
+        alert(`Error deleting expense: ${error.message}`);
+      });
   };
 
   const totalCost = expenses.reduce((acc, expense) => acc + expense.amount, 0);
@@ -57,7 +102,7 @@ const Expenses = () => {
         </button>
       </div>
 
-      <div className="mb-4 text-black ">
+      <div className="mb-4 text-black">
         <p>
           Total Expenses: <strong>{expenses.length}</strong>
         </p>
@@ -70,7 +115,7 @@ const Expenses = () => {
         {expenses.map((expense) => (
           <li
             key={expense.id}
-            className="flex justify-between items-center p-2 border-b text-black "
+            className="flex justify-between items-center p-2 border-b text-black"
           >
             <span>
               {expense.name} - ${expense.amount.toFixed(2)}
