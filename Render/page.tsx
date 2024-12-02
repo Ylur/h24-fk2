@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 
 interface Task {
   id: number;
@@ -8,29 +8,27 @@ interface Task {
   completed: boolean;
 }
 
-// að nota VIM er góð skemmtun ..fml !
-const TaskItem: React.FC<{
-  task: Task;
-  onToggle: (id: number) => void;
-}> = React.memo(function TaskItem({ task, onToggle }) {
-  console.log(`Rendering Task: ${task.title}`);
-  return (
-    <li>
-      <label>
-        <input
-          type="box"
-          checked={task.completed}
-          onChange={() => onToggle(task.id)}
-        />
-        {task.title}
-      </label>
-    </li>
-  );
-});
+// Task component (optimized? ish? autobots roll out?)
+const TaskItem: React.FC<{ task: Task; onToggle: (id: number) => void }> =
+  React.memo(({ task, onToggle }) => {
+    console.log(`Rendering Task: ${task.title}`);
+    return (
+      <li>
+        <label>
+          <input
+            type="checkbox"
+            checked={task.completed}
+            onChange={() => onToggle(task.id)}
+          />
+          {task.title}
+        </label>
+      </li>
+    );
+  });
 
 const TaskManagerApp: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>(
-    Array.from({ length: 10 }, (_, i) => ({
+    Array.from({ length: 1000 }, (_, i) => ({
       id: i,
       title: `Task ${i}`,
       completed: false,
@@ -40,7 +38,7 @@ const TaskManagerApp: React.FC = () => {
   const [newTask, setNewTask] = useState<string>("");
   const [search, setSearch] = useState<string>("");
 
-  const handleAddTask = useCallback(() => { 
+  const handleAddTask = useCallback(() => {
     setTasks((prevTasks) => [
       ...prevTasks,
       { id: prevTasks.length, title: newTask, completed: false },
@@ -49,20 +47,19 @@ const TaskManagerApp: React.FC = () => {
   }, [newTask]);
 
   const handleToggleTask = useCallback((id: number) => {
-    setTasks((prevTasks) => {
-      const taskIndex = prevTasks.findIndex((task) => task.id === id);
-      if (taskIndex === -1) return prevTasks;
-      const newTasks = [...prevTasks];
-      newTasks[taskIndex] = {
-        ...prevTasks[taskIndex],
-        completed: !prevTasks[taskIndex].completed,
-      };
-      return newTasks;
-    });
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task
+      )
+    );
   }, []);
 
-  const filteredTasks = tasks.filter((task) =>
-    task.title.toLowerCase().includes(search.toLowerCase())
+  const filteredTasks = useMemo(
+    () =>
+      tasks.filter((task) =>
+        task.title.toLowerCase().includes(search.toLowerCase())
+      ),
+    [tasks, search]
   );
 
   console.log("App rendered");
