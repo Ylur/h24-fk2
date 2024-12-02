@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanilla JS Toggle Example</title>
+</head>
+<body>
+  <div id="app">
+    <h1>Hello from Vanilla JS!</h1>
+    <button id="toggleButton">Show Message</button>
+    <p id="message" style="display: none;">This is a toggled message!</p>
+  </div>
+
+  <script>
+    const button = document.getElementById('toggleButton');
+    const message = document.getElementById('message');
+
+    let isVisible = false;
+
+    button.addEventListener('click', () => {
+      isVisible = !isVisible; // Toggle the visibility flag
+
+      if (isVisible) {
+        message.style.display = 'block'; // Show message
+        button.textContent = 'Hide Message'; // Update button text
+      } else {
+        message.style.display = 'none'; // Hide message
+        button.textContent = 'Show Message'; // Update button text
+      }
+    });
+  </script>
+</body>
+</html>
