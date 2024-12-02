@@ -13,10 +13,16 @@ const Navbar = () => {
           <Link href="/about">About</Link>
         </li>
         <li>
-          <Link href="/contact">Contact</Link>
+          <Link href="/about/education">Education</Link>
         </li>
         <li>
-          <Link href="/shrek">Shrek</Link>
+          <Link href="/about/skills">Skills</Link>
+        </li>
+        <li>
+          <Link href="/about/work">Work Experience</Link>
+        </li>
+        <li>
+          <Link href="/contact">Contact</Link>
         </li>
       </ul>
     </nav>
