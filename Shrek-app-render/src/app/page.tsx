@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import "../styles//globals.css";
+import "../styles/globals.css";
 
 const shrekQuotes = [
   "Ogres are like onions... they have layers!",
