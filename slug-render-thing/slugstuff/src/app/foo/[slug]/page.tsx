@@ -1,15 +1,15 @@
 "use client";
 
-import { useRouter } from "next/router";
+import { useSearchParams } from "next/navigation";
 
 export default function SlugPage() {
-  const router = useRouter();
-  const { slug } = router.query;
+    const searchParams = useSearchParams();
+    const slug = searchParams.get("slug"); 
 
-  return (
-    <div>
-      <h1>Shrek slug page {slug}</h1>
-      <p>Dynamic rendering með slug.</p>
-    </div>
-  );
+    return (
+        <div>
+            <h1>Dynamic Page for Shrek Slug: {slug || "Ekkert slug "}</h1>
+            <p>This page dynamically renders content based on the slug in the URL.</p>
+        </div>
+    );
 }
