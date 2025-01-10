@@ -2,30 +2,37 @@
 
 import React, { useState, useCallback, useMemo } from "react";
 
+// Is it better to create another file and import this instead?
 interface Task {
   id: number;
   title: string;
   completed: boolean;
 }
 
-// Task component (optimized? ish? autobots roll out?)
-const TaskItem: React.FC<{ task: Task; onToggle: (id: number) => void }> =
-  React.memo(({ task, onToggle }) => {
-    console.log(`Rendering Task: ${task.title}`);
-    return (
-      <li>
-        <label>
-          <input
-            type="checkbox"
-            checked={task.completed}
-            onChange={() => onToggle(task.id)}
-          />
-          {task.title}
-        </label>
-      </li>
-    );
-  });
+// Task component (optimized)
+const TaskItem: React.FC<{
+  task: Task;
+  onToggle: (id: number) => void;
+}> = React.memo(({ task, onToggle }) => {
+  console.log(`Rendering Task: ${task.title}`);
+  return (
+    <li>
+      <label>
+        <input
+          type="checkbox"
+          checked={task.completed}
+          onChange={() => onToggle(task.id)}
+        />
+        {task.title}
+      </label>
+    </li>
+  );
+});
 
+// Set display name for TaskItem
+TaskItem.displayName = "TaskItem";
+
+// TaskManagerApp component
 const TaskManagerApp: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>(
     Array.from({ length: 1000 }, (_, i) => ({
@@ -38,6 +45,14 @@ const TaskManagerApp: React.FC = () => {
   const [newTask, setNewTask] = useState<string>("");
   const [search, setSearch] = useState<string>("");
 
+  // Memoized filtered tasks
+  const filteredTasks = useMemo(() => {
+    return tasks.filter((task) =>
+      task.title.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [tasks, search]);
+
+  // Add new task
   const handleAddTask = useCallback(() => {
     setTasks((prevTasks) => [
       ...prevTasks,
@@ -46,6 +61,7 @@ const TaskManagerApp: React.FC = () => {
     setNewTask("");
   }, [newTask]);
 
+  // Toggle task completion
   const handleToggleTask = useCallback((id: number) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
@@ -53,14 +69,6 @@ const TaskManagerApp: React.FC = () => {
       )
     );
   }, []);
-
-  const filteredTasks = useMemo(
-    () =>
-      tasks.filter((task) =>
-        task.title.toLowerCase().includes(search.toLowerCase())
-      ),
-    [tasks, search]
-  );
 
   console.log("App rendered");
 
